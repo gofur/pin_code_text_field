@@ -68,7 +68,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          GestureDetector(
+           GestureDetector(
             behavior: HitTestBehavior.opaque,
             onTap: () {
               if (hasFocus) {
@@ -134,7 +134,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
       return _buildPinCode(i, context);
     });
 
-    return Row(
+    return  Row(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -163,14 +163,14 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
     } else {
       boxDecoration = widget.pinBoxDecoration(borderColor);
     }
-    return Padding(
+    return Expanded(child: Padding(
       padding: const EdgeInsets.symmetric(horizontal: 4.0),
       child: Container(
         child: Center(child: Text(strList[i], style: TextStyle(fontSize: 20.0),)),
         decoration: boxDecoration,
-        width: 50.0,
+//        width: 50.0,
         height: 60.0,
       ),
-    );
+    ));
   }
 }
